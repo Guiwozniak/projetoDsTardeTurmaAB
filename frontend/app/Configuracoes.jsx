@@ -29,7 +29,7 @@ const Configuracoes = React.memo(() => {
   return (
     <LinearGradient colors={['#8000d5', '#f910a3', '#fddf00']} style={styles.gradient}>
       <SafeAreaView style={styles.safe}>
-        {/* Botão de voltar */}
+      
         <TouchableOpacity style={styles.voltar} onPress={() => navigation.goBack()}>
           <Ionicons name="arrow-back" size={22} color="#fff" />
         </TouchableOpacity>
@@ -39,7 +39,7 @@ const Configuracoes = React.memo(() => {
           showsVerticalScrollIndicator={false}
         >
           <Animated.View style={[styles.container, { opacity: fadeAnim }]}>
-            {/* Logo */}
+       
             <View style={styles.logoContainer}>
               <Image
                 style={styles.logo}
@@ -48,12 +48,15 @@ const Configuracoes = React.memo(() => {
               />
             </View>
 
-            {/* Título */}
+           
             <Text style={styles.titulo}>Configurações</Text>
 
-            {/* Botões */}
+          
             <View style={styles.botoesContainer}>
-              <TouchableOpacity style={styles.botao}>
+              <TouchableOpacity
+                style={styles.botao}
+                onPress={() => navigation.navigate('privacidade')}
+              >
                 <Text style={styles.textoBotao}>Privacidade</Text>
               </TouchableOpacity>
 
@@ -107,12 +110,6 @@ const styles = StyleSheet.create({
     borderRadius: 25,
     backgroundColor: '#fff',
     resizeMode: 'contain',
-  },
-  logoTexto: {
-    color: '#fff',
-    fontSize: 18,
-    marginTop: 8,
-    fontFamily: 'negrito',
   },
   titulo: {
     fontFamily: 'negrito',
